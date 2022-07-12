@@ -150,9 +150,9 @@
 </ul>
 <h2 id="汇编基础"><a href="#汇编基础" class="headerlink" title="汇编基础"></a>汇编基础</h2><h3 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h3><p>是CPU内部存储值的地方，下图是x86-64架构CPU的寄存器。</p>
 <p>所有寄存器图</p>
-<p><img src="https://dowob.cn/2019/09/13/x64%E6%B1%87%E7%BC%96%E4%BB%8B%E7%BB%8D/64%E4%BD%8D%E5%AF%84%E5%AD%98%E5%99%A8.png"></p>
+<p><img src="https://dowob.cn/2019/09/13/x64%E6%B1%87%E7%BC%96%E4%BB%8B%E7%BB%8D/64%E4%BD%8D%E5%AF%84%E5%AD%98%E5%99%A8.png" alt=""></p>
 <p>常用64位寄存器图</p>
-<p><img src="https://img-blog.csdn.net/20160428232504330"></p>
+<p><img src="https://img-blog.csdn.net/20160428232504330" alt=""></p>
 <p>其中有几个固定使用的寄存器：</p>
 <ol>
 <li>RBP:栈底寄存器</li>
@@ -161,6 +161,7 @@
 </ol>
 <h3 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h3><p>内存是用于程序运行时存储数据的地方。操作系统会自动为每个应用程序分配一定大小的虚拟内存空间，让程序认为自己在一块独立的内存空间运行。</p>
 <h3 id="常见汇编指令"><a href="#常见汇编指令" class="headerlink" title="常见汇编指令"></a>常见汇编指令</h3><p>在汇编中，用[]表示操作内存。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -169,7 +170,8 @@
 <th>等价代码</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>mov rax,rbx</td>
 <td>用于赋值</td>
 <td>rax=rbx</td>
@@ -182,7 +184,8 @@
 <tr>
 <td>and/xor/or rax,rbx</td>
 <td>用于与/异或/或</td>
-<td>rax&amp;=rbx/rax^=rbx/rax|=rbx</td>
+<td>rax&amp;=rbx/rax^=rbx/rax\</td>
+<td>=rbx</td>
 </tr>
 <tr>
 <td>push rax</td>
@@ -214,8 +217,11 @@
 <td>比较两个数</td>
 <td>rax&amp;rbx,不保留结果,只修改flags寄存器</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>各种跳转指令</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -224,7 +230,8 @@
 <th>实际作用</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>jmp</td>
 <td>jump</td>
 <td>跳转</td>
@@ -249,15 +256,19 @@
 <td>jump if less</td>
 <td>有符号数小于跳转</td>
 </tr>
-</tbody></table>
-<h2 id="IDA软件使用"><a href="#IDA软件使用" class="headerlink" title="IDA软件使用"></a>IDA软件使用</h2><table>
+</tbody>
+</table>
+</div>
+<h2 id="IDA软件使用"><a href="#IDA软件使用" class="headerlink" title="IDA软件使用"></a>IDA软件使用</h2><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>快捷键</th>
 <th>功能</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>空格</td>
 <td>汇编视图、流程图转化</td>
 </tr>
@@ -313,7 +324,9 @@
 <td>F4</td>
 <td>运行到此处</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>例题：</p>
 <h2 id="函数调用约定"><a href="#函数调用约定" class="headerlink" title="函数调用约定"></a>函数调用约定</h2><h3 id="64位-windows默认"><a href="#64位-windows默认" class="headerlink" title="64位/windows默认"></a>64位/windows默认</h3><p>函数参数依次放入寄存器RCX,RDX,R8,R9,栈 </p>
 <p>返回值放入RAX</p>
